@@ -1,16 +1,6 @@
 [build.processing]
   skip_processing = false
 
-# Prevents the dependabot PRs from blowing up our allotted builds
-[build]
-  ignore = '''
-  if echo $HEAD | grep "^dependabot" ;
-    then exit 0
-  else
-    exit 1
-  fi
-  '''
-
 [[plugins]]
   package = "netlify-plugin-contextual-env"
 
