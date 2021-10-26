@@ -11,18 +11,6 @@
   fi
   '''
 
-[context.deploy-preview.processing]
-  skip_processing = true
-
-[context.production]
-  ignore = "exit 0"
-  # Deploy via circle rather than directly on merge. For more info, see below:
-  # https://answers.netlify.com/t/build-deploy-via-webhook-only/2516/13
-  # "A currently undocumented behavior of our ignore command is that
-  # it won’t run for builds triggered by webhook, but it will run for builds
-  # triggered by a push to Github... this will cancel all builds triggered
-  # via Github push. But webhook builds will succeed."
-
 [[plugins]]
   package = "netlify-plugin-contextual-env"
 
