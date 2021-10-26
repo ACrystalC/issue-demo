@@ -1,0 +1,31 @@
+[build.processing]
+  skip_processing = false
+
+# Prevents the dependabot PRs from blowing up our allotted builds
+[build]
+  ignore = '''
+  if echo $HEAD | grep "^dependabot" ;
+    then exit 0
+  else
+    exit 1
+  fi
+  '''
+
+[context.deploy-preview.processing]
+  skip_processing = true
+
+[context.production]
+  ignore = "exit 0"
+  # Deploy via circle rather than directly on merge. For more info, see below:
+  # https://answers.netlify.com/t/build-deploy-via-webhook-only/2516/13
+  # "A currently undocumented behavior of our ignore command is that
+  # it won’t run for builds triggered by webhook, but it will run for builds
+  # triggered by a push to Github... this will cancel all builds triggered
+  # via Github push. But webhook builds will succeed."
+
+[[plugins]]
+  package = "netlify-plugin-contextual-env"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+

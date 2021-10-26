@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "projects": {
+    "guide": "apps/guide",
+    "guide-e2e": "apps/guide-e2e",
+    "util-next-dynamic-routes": "libs/util-next-dynamic-routes"
+  }
+}

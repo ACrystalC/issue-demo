@@ -1,0 +1,25 @@
+{
+  "root": "libs/util-next-dynamic-routes",
+  "sourceRoot": "libs/util-next-dynamic-routes/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/util-next-dynamic-routes/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/util-next-dynamic-routes"],
+      "options": {
+        "jestConfig": "libs/util-next-dynamic-routes/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
